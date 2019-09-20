@@ -26,7 +26,7 @@ valores=1000
 valores2=1000
 bandera=0
 
-idMaximo=0
+idMaximo=999
 #La manera en la que funcionan estos arrays, es que se agrega un índice con su ID, su nombre y su encoding por cada foto. O sea 10 fotos
 #De la misma persona, va a tener 10 encodings, y se compara cada foto entre sí. Y luego se cuentan cuantas veces salió el nombre.
 #Entonces, no hay necesidad de que tengan un orden predeterminado. SImplemente agregamos las fotos nuevas al final del nuevo array. 

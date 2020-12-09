@@ -40,7 +40,7 @@ To start the execution, you position your self into the folder and then execute
 * python3 integrado.py 
 
 ## Usage
-![menu](images/1.jpg)
+![menu](images/1.jpeg)
 
 From the menu (in Spanish) you can start the program, see the database of users, add a new user, delete an existing user, train the network with the new faces (first time), see the historical log, re-train the network after adding a new user, and change some parameters. 
 

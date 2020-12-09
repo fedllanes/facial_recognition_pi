@@ -34,4 +34,42 @@ Once you are in your raspberry pi terminal, you need to execute the following co
 * sudo pip3 install dlib 
 * sudo pip3 install face_recognition 
 * sudo pip3 install imutils 
-* git clone https://github.com/fedllanes/facial_recognition_pi.git 
+* git clone https://github.com/fedllanes/facial_recognition_pi.git
+
+To start the execution, you position your self into the folder and then execute
+* python3 integrado.py 
+
+## Usage
+Image of the menu REPLACE REPLACE REPLACE
+
+From the menu (in Spanish) you can start the program, see the database of users, add a new user, delete an existing user, train the network with the new faces (first time), see the historical log, re-train the network after adding a new user, and change some parameters. 
+
+Once the program detects a face for 3 frames in a row, it will spit out a visual message saying that the face was recognized, and it can turn on a GPIO pin. It also says how confident the algorithm is.  The first number(1.00) assumes the user is in the database and how confident it is that it’s that user, and the second number how likely it is that it’s this user(assuming it could be someone outside the database) 
+
+Image REPLACE REPLACE REPLACE
+
+## File structure
+
+Image REPLACE REPLACE REPLACE
+
+Besides the different python scripts, there is:
+* Dataset folder: in which there are subfolders corresponding to the name of each face and the pictures of that face inside.
+* encondings.pickle: Where the parameters(encoding) of each face are saved
+* log.txt: Where one can see all the recognized faces 
+* log folder: Where one can see the screenshot for each log. 
+* parametros.pickle: It saves the default parameters which can be modified throught the menu.
+
+## Libraries used: 
+
+* OpenCV. 
+* Dlib 
+* Imutils 
+* Numpy 
+
+## How does it work? 
+
+The haarcascade_frontalface_default algorithm is used to detect faces and it uses the “Haar characteristics” to do so. Filters are applied throughout the image in order to be able to detect faces(more information can be found at https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html) 
+Once the face is recognized and cropped, face_encodings (based on the dlib library) turns it into a 128 dimensions vector and it is saved to encodings.pickle.
+When a new face is detected, its vector is compared to those in the database, by calculating the eucledian distance. If the distance is lower than 0.6, we assume it's the same person.
+
+

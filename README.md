@@ -46,7 +46,7 @@ From the menu (in Spanish) you can start the program, see the database of users,
 
 Once the program detects a face for 3 frames in a row, it will spit out a visual message saying that the face was recognized, and it can turn on a GPIO pin. It also says how confident the algorithm is.  The first number(1.00) assumes the user is in the database and how confident it is that it’s that user, and the second number how likely it is that it’s this user(assuming it could be someone outside the database) 
 
-![detection](images/3.jpeg)
+![detection](images/2.jpeg)
 
 ## File structure
 

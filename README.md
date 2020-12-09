@@ -46,11 +46,11 @@ From the menu (in Spanish) you can start the program, see the database of users,
 
 Once the program detects a face for 3 frames in a row, it will spit out a visual message saying that the face was recognized, and it can turn on a GPIO pin. It also says how confident the algorithm is.  The first number(1.00) assumes the user is in the database and how confident it is that it’s that user, and the second number how likely it is that it’s this user(assuming it could be someone outside the database) 
 
-Image REPLACE REPLACE REPLACE
+![detection](images/3.jpeg)
 
 ## File structure
 
-Image REPLACE REPLACE REPLACE
+![file_structure](images/3.jpeg)
 
 Besides the different python scripts, there is:
 * Dataset folder: in which there are subfolders corresponding to the name of each face and the pictures of that face inside.

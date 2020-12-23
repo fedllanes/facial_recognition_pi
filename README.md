@@ -68,8 +68,10 @@ Besides the different python scripts, there is:
 
 ## How does it work? 
 
-The haarcascade_frontalface_default algorithm is used to detect faces and it uses the “Haar characteristics” to do so. Filters are applied throughout the image in order to be able to detect faces(more information can be found at https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html) 
-Once the face is recognized and cropped, face_encodings (based on the dlib library) turns it into a 128 dimensions vector and it is saved to encodings.pickle.
-When a new face is detected, its vector is compared to those in the database, by calculating the eucledian distance. If the distance is lower than 0.6, we assume it's the same person.
+* The haarcascade_frontalface_default algorithm is used to detect faces and it uses the “Haar characteristics” to do so. Filters are applied throughout the image in order to be able to detect faces(more information can be found at https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html) 
+
+* Once the face is recognized and cropped, face_encodings (based on the dlib library) turns it into a 128 dimensions vector and it is saved to encodings.pickle.
+
+* When a new face is detected, its vector is compared to those in the database, by calculating the eucledian distance. If the distance is lower than 0.6, we assume it's the same person.
 
 

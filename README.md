@@ -68,10 +68,26 @@ Besides the different python scripts, there is:
 
 ## How does it work? 
 
-* The haarcascade_frontalface_default algorithm is used to detect faces and it uses the “Haar characteristics” to do so. Filters are applied throughout the image in order to be able to detect faces(more information can be found at https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html) 
+  ### Training
+  
+  The algorithm will loop through each image on the dataset and for each image, it will do the same preprocessing.
 
-* Once the face is recognized and cropped, face_encodings (based on the dlib library) turns it into a 128 dimensions vector and it is saved to encodings.pickle.
+  * The haarcascade_frontalface_default algorithm is used to detect faces and it uses the “Haar characteristics” to do so. Filters are applied throughout the image in order to be able to detect faces(more information can be found at https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html) 
 
-* When a new face is detected, its vector is compared to those in the database, by calculating the eucledian distance. If the distance is lower than 0.6, we assume it's the same person.
+  * Once the face is recognized, the image is cropped to only the face
+
+  * face_encodings (based on the dlib library) turns the face into a 128 dimensions vector and it is saved to encodings.pickle with its corresponding label.
+
+  ### Detection
+  
+  * The camera is constantly capturing.
+  
+  * Each frame is feed to the haarcascade_frontalface_default, if it detects a face, it'll crop it
+  
+  * The detected face will then be encoded with face_encodings
+  
+  * The encoding will be compared to each encoding on encodings.pickle, this is done by calculating the eucledian distance. If it finds a match(a distance lower than 0.6), it'll return the match
+ 
+  * Only once this happens 3 frames in a row, will the GPIO pin turn on.
 
 

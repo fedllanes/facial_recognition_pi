@@ -4,8 +4,13 @@
 #### There's a full spanish report in word in the repository.
 #### ------------------------------------------------------------------------------------
 
-This proyect uses a raspberry pi 3B and its camera to detect people, to for example, open a door. 
-The idea of this proyect is to make a script where you can add new users, tweak the parameters and pick a GPIO pin to activate once a face has been detected. Everything will be saved on a log, and users can also be deleted at any time. There's a terminal interface to make things simpler. 
+This proyect uses a raspberry pi 3B and its camera to detect people to, for example, open a door. 
+
+It uses algorithms to detect faces and compare them to saved faces on a database.
+
+The idea of this proyect is to make a script where you can add new users, tweak the parameters and pick a GPIO pin to activate once a face has been detected. Everything will be saved on a log, users can also be deleted at any time.
+
+There's a terminal interface to make things simpler. 
 
 ## Requirements 
 
